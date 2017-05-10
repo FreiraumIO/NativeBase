@@ -199,15 +199,15 @@ class Fab extends Component {
 
   renderButtons() {
     const childrenArray = React.Children.toArray(this.props.children);
-    const icon = _.remove(childrenArray, (item) => {
-      if (item.type.displayName === "Styled(Icon)" || item.type.displayName === "Styled(IconNB)") {
-        return true;
-      }
-    });
+    // const icon = _.remove(childrenArray, (item) => {
+    //   if (item.type.displayName === "Styled(Icon)" || item.type.displayName === "Styled(IconNB)") {
+    //     return true;
+    //   }
+    // });
 
     const newChildren = [];
 
-    { childrenArray.map((child, i) => {
+    { childrenArray.slice(1).map((child, i) => {
       newChildren.push(<AnimatedFab
         style={this.getOtherButtonStyle(child, i)}
         {...this.prepareButtonProps(child, i)}

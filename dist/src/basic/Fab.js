@@ -199,15 +199,15 @@ return _react2.default.cloneElement(childrenArray[0],{style:this.getInitialStyle
 
 {var _this3=this;
 var childrenArray=_react2.default.Children.toArray(this.props.children);
-var icon=_lodash2.default.remove(childrenArray,function(item){
-if(item.type.displayName==="Styled(Icon)"||item.type.displayName==="Styled(IconNB)"){
-return true;
-}
-});
+
+
+
+
+
 
 var newChildren=[];
 
-{childrenArray.map(function(child,i){
+{childrenArray.slice(1).map(function(child,i){
 newChildren.push(_react2.default.createElement(AnimatedFab,_extends({
 style:_this3.getOtherButtonStyle(child,i)},
 _this3.prepareButtonProps(child,i),{
